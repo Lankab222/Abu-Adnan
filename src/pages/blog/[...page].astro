@@ -14,20 +14,6 @@ import t from '~/data/ar.json';
 import type { GetStaticPathsOptions, Page } from 'astro';
 import type { CollectionEntry } from 'astro:content';
 
-// export async function getStaticPaths2({ paginate }: { paginate: GetStaticPathsOptions['paginate'] }) {
-//   const posts = (await getCollection('blog')).sort(
-//     (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
-//   );
-
-//   return Object.keys(languages).flatMap((lang) => {
-//       const filteredPosts = posts.filter((post) => post.id.startsWith(`${lang}/`));
-//       return paginate(filteredPosts, { 
-//           params: { lang }, 
-//           pageSize: siteConfig.blog.postsPerPage
-//       });
-//   });
-// }
-// تأكد من وجود هذا الاستدعاء في أعلى الملف (إذا لم يكن موجوداً)
 
 
 export async function getStaticPaths({ paginate }: { paginate: GetStaticPathsOptions['paginate'] }) {
