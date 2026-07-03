@@ -16,17 +16,10 @@ interface Props {
   author?: string;
 }
 
-const { title, description, pubDate, slug, heroImage, isVideo = false, audioUrl, author: authorSlug } = Astro.props;
+const { title, description, pubDate, slug, heroImage, isVideo = false, audioUrl } = Astro.props;
 
 
-// Fetch author if provided
-let authorName = '';
-if (authorSlug) {
-  const authorEntry = await getEntry('authors', `/authorSlug`) || await getEntry('authors', `/authorSlug`);
-  if (authorEntry) {
-    authorName = authorEntry.data.name;
-  }
-}
+
 
 const dateString = pubDate.toLocaleDateString("ar", {
   year: 'numeric',
@@ -75,10 +68,10 @@ const dateString = pubDate.toLocaleDateString("ar", {
   <div class="p-6">
     <div class="flex items-center gap-2 text-xs text-muted-foreground mb-3">
       <time datetime={pubDate.toISOString()}>{dateString}</time>
-      {authorName && (
+      {t["NameSite"] && (
         <>
           <span>•</span>
-          <span class="font-medium text-primary/80">{authorName}</span>
+          <span class="font-medium text-primary/80">{t["NameSite"]}</span>
         </>
       )}
       <span>•</span>

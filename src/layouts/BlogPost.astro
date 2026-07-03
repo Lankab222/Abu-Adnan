@@ -29,11 +29,7 @@ interface Props {
 const { title, description, pubDate, updatedDate, heroImage, heroImageAlt, youtubeId, audioUrl, isVideo, noindex, nofollow, author, tags } = Astro.props;
 
 // إصلاح كود جلب الكاتب ليعمل بشكل مباشر بدون لغات
-let authorEntry = null;
-if (author) {
-    // جلب الكاتب بناءً على المعرف (id) الخاص به
-    authorEntry = await getEntry('authors', author.id || author);
-}
+
 
 const schema = {
   "@context": "https://schema.org",
@@ -46,7 +42,7 @@ const schema = {
   ...(heroImage && { "image": new URL(heroImage.src, Astro.site).toString() }),
   "author": {
       "@type": "Person",
-      "name": authorEntry ? authorEntry.data.name : "طيف الإعمار",
+      "name": t["NameSite"],
       "url": Astro.site?.toString() || ""
   }
 };
@@ -140,6 +136,6 @@ const schema = {
       <slot />
     </div>
 
-    {authorEntry && <AuthorDetails author={authorEntry} />}
+    <AuthorDetails  />
   </article>
 </Layout>

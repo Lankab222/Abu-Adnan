@@ -24,21 +24,8 @@ const blogCollection = defineCollection({
 
 
 
-const authorsCollection = defineCollection({
-    loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/authors" }),
-    schema: ({ image }) => z.object({
-        name: z.string(),
-        description: z.string(),
-        avatar: image(),
-        social: z.object({
-            twitter: z.string().optional(),
-            linkedin: z.string().optional(),
-            github: z.string().optional(),
-        }).optional(),
-    }),
-});
+
 
 export const collections = {
 	'blog': blogCollection,
-    'authors': authorsCollection,
 };
