@@ -1,0 +1,28 @@
+---
+import { getCollection, render } from 'astro:content';
+import BlogPost from '~/layouts/BlogPost.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  
+  return posts.map(post => {
+    // تنظيف اسم الملف من الامتداد (مثل .md أو .mdx) ليصبح رابطاً نظيفاً
+    const cleanSlug = post.id.replace(/\.[^/.]+$/, "");
+    
+    return {
+      // يجب أن يكون الاسم هنا slug ليطابق تماماً اسم الملف [...slug].astro
+      params: { slug: cleanSlug }, 
+      props: { post },
+    };
+  });
+}
+
+// استقبال المقال الحالي
+const { post } = Astro.props;
+// تجهيز وتحويل محتوى الـ Markdown إلى HTML
+const { Content } = await render(post);
+---
+
+<BlogPost {...post.data}>
+  <Content />
+</BlogPost>
