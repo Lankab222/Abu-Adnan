@@ -2,7 +2,7 @@
 title: 'الأصباغ الخارجية وطلاء الواجهات'
 description: 'الأصباغ الخارجية وطلاء الواجهات'
 pubDate: '2025-11-10'
-heroImage: '~/assets/blog/123.jpg'
+heroImage: '~/assets/blog/12ss3.jpg'
 author: 'tars'
 tags: ["اصباغ", "اصباغ خارجية", "واجهات"]
 ---
