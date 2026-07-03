@@ -30,8 +30,8 @@ export const siteConfig = {
       label: 'اتصل بنا',
     },
     address: {
-      city: 'أبو ظبي',
-      full: 'مدينة أبوظبي، بني ياس، الإمارات العربية المتحدة',
+      city: 'الرياض',
+      full: 'المملكة العربية السعودية',
     }
   },
   analytics: {
