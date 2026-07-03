@@ -3,23 +3,20 @@ import sitemap from "@astrojs/sitemap";
 import react from "@astrojs/react";
 import mdx from "@astrojs/mdx";
 import tailwindcss from '@tailwindcss/vite';
-import mermaid from "astro-mermaid";
 
-// Strip heading IDs from changelogs to fix duplicate ID warnings based on hN having the same name example with mdx, md plugins : Performance (0.3.0, 0.2.8)
+// إضافة مسح الـ IDs من العناوين لتجنب التكرار
 const stripIdsPlugin = () => (tree, file) => {
   const filePath = (file.path || (file.history && file.history[0]) || '').replace(/\\/g, '/');
   const isChangelog = filePath.toLowerCase().includes('changelog') || filePath.match(/v\d+-\d+-\d+/);
   
   if (isChangelog) {
     const visit = (node) => {
-      // Remark phase: preemptively block the internal slugifier
       if (node.type === 'heading') {
         node.data = node.data || {};
         node.data.hProperties = node.data.hProperties || {};
         node.data.hProperties.id = "";
       }
       
-      // Rehype phase: final sweep to make sure IDs are actually gone from the HTML
       if (node.type === 'element' && /^h[1-6]$/.test(node.tagName)) {
         if (node.properties && ('id' in node.properties)) {
           delete node.properties.id;
@@ -36,7 +33,7 @@ const DEFAULT_LOCALE = "ar";
 
 export default defineConfig({
   site: 'https://example.site/', // تأكد من تغيير هذا الرابط لاحقاً إلى الدومين الحقيقي للعميل
-  output: 'static',
+  output: 'static', // 🟢 تم الاعتماد على الوضع الاستاتيكي السريع
   image: {
     domains: ['vitejs.dev', 'upload.wikimedia.org', 'astro.build', 'pagepro.co'],
     service: { entrypoint: 'astro/assets/services/sharp' },
@@ -64,7 +61,7 @@ export default defineConfig({
     mdx({
       remarkPlugins: [stripIdsPlugin],
       rehypePlugins: [stripIdsPlugin]
-    }),
-    mermaid()
+    })
+    // ❌ تم حذف إدراج mermaid من هنا لتجنب الأخطاء
   ]
 });
