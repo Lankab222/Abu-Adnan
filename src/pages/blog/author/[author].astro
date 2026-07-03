@@ -19,13 +19,13 @@ export async function getStaticPaths() {
       const filteredPosts = allPosts
         .filter((post) => {
             const postAuthor = post.data.author;
-            return postAuthor === author.id;
+            return postAuthor === author.data.name || postAuthor === author.id;
         })
         .sort((a: CollectionEntry<'blog'>, b: CollectionEntry<'blog'>) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
       return {
         // 3. تمرير اسم الكاتب (الـ id) مباشرة وبدون أي قص
-        params: { author: author.id },
+        params: { author: author.data.name || author.id },
         props: { 
             posts: filteredPosts, 
             authorSlug: author.id 

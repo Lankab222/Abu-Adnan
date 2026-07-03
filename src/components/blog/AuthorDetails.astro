@@ -12,8 +12,7 @@ const { name, description, avatar, social } = author.data;
 
 
 // Extract slug from ID (e.g., "en/joseph-cooper" -> "joseph-cooper")
-const authorSlug = author.id.split('/').slice(1).join('/');
-const authorLink = `/blog/author/${authorSlug}`;
+
 ---
 
 <div class="mt-16 p-8 rounded-2xl bg-foreground/5 border border-foreground/10 relative overflow-hidden group">
@@ -22,7 +21,7 @@ const authorLink = `/blog/author/${authorSlug}`;
   
   <div class="flex flex-col md:flex-row items-center md:items-start gap-8 relative z-10">
     <div class="shrink-0">
-      <a href={authorLink} class="block relative w-24 h-24 md:w-32 md:h-32 rounded-2xl overflow-hidden ring-4 ring-background shadow-xl">
+      <a href="#" class="block relative w-24 h-24 md:w-32 md:h-32 rounded-2xl overflow-hidden ring-4 ring-background shadow-xl">
         <Image 
           src={avatar} 
           alt={name} 
@@ -34,7 +33,7 @@ const authorLink = `/blog/author/${authorSlug}`;
     </div>
     
     <div class="flex-1 text-center md:text-left">
-      <a href={authorLink} class="inline-block group/link">
+      <a href="#" class="inline-block group/link">
         <h3 class="text-2xl font-bold text-foreground mb-2 group-hover/link:text-primary transition-colors">{name}</h3>
       </a>
       <p class="text-muted-foreground leading-relaxed mb-6">
