@@ -1,5 +1,5 @@
 ---
-name: 'TARS'
+name: 'طيف الاعمار'
 description: 'Advanced tactical and scientific robot. Programming includes 90% honesty and a customizable humor level.'
 avatar: '~/assets/authors/tars.webp'
 social:
