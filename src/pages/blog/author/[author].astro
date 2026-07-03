@@ -10,26 +10,18 @@ import t from '~/data/ar.json';
 import type { CollectionEntry } from 'astro:content';
 
 export async function getStaticPaths() {
-  // 1. جلب كل المقالات والكُتّاب
   const allPosts = await getCollection('blog');
   const allAuthors = await getCollection('authors');
   
-  return allAuthors.map((author) => {
-      // 2. تصفية المقالات لتطابق هذا الكاتب فقط
+   return allAuthors.map((authorSlug) => {
+      // Filter posts by this author and language
       const filteredPosts = allPosts
-        .filter((post) => {
-            const postAuthor = post.data.author;
-            return postAuthor === author.data.name || postAuthor === author.id;
-        })
+        .filter((post) =>  post.data.author === authorSlug.data.name)
         .sort((a: CollectionEntry<'blog'>, b: CollectionEntry<'blog'>) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
       return {
-        // 3. تمرير اسم الكاتب (الـ id) مباشرة وبدون أي قص
-        params: { author: author.data.name || author.id },
-        props: { 
-            posts: filteredPosts, 
-            authorSlug: author.id 
-        },
+        params: {  author: authorSlug },
+        props: { posts: filteredPosts, authorSlug },
       };
     });
 }
@@ -41,7 +33,7 @@ const { posts, authorSlug } = Astro.props;
 let authorEntry = await getEntry('authors', `/${authorSlug}`);
 
 
-const authorName = authorEntry ? authorEntry.data.name : authorSlug;
+const authorName = authorEntry ? authorEntry.data.name : authorSlug.data.name;
 const authorDesc = authorEntry ? authorEntry.data.description : "";
 ---
 
