@@ -1,9 +1,9 @@
 ---
-import { defaultLang } from '~/i18n/ui';
+import t from '~/data/ar.json';
 import Schema from '../layout/Schema.astro';
 import { ChevronDown } from 'lucide-react';
 
-import { useTranslations } from '~/i18n/utils';
+
 
 interface FAQItem {
   question: string;
@@ -15,8 +15,7 @@ interface Props {
 }
 
 const { items } = Astro.props;
-const { lang = defaultLang} = Astro.params;
-const t = useTranslations(lang);
+
 
 const schema = {
   "@context": "https://schema.org",
