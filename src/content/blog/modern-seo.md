@@ -4,6 +4,7 @@ description: 'دليل شامل لاستراتيجيات تحسين محركات
 pubDate: '2025-01-15'
 heroImage: '~/assets/blog/search.webp'
 tags: ["SEO", "تسويق", "جوجل"]
+author: 'tars'
 ---
 
 ## الـ SEO لم يمت، لكنه تطور

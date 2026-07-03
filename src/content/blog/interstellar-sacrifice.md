@@ -4,6 +4,7 @@ description: 'التشطيبات وترميم المباني والملاحق'
 pubDate: '2025-05-01'
 heroImage: '~/assets/blog/123.jpg'
 tags: ["ترميات", "بناء", "ملاحق"]
+author: 'tars'
 ---
 
 

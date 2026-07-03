@@ -4,6 +4,7 @@ description: 'الواجهة الجميلة ليست مجرد زينة، بل ه
 pubDate: '2025-01-15'
 heroImage: '~/assets/blog/art.webp'
 tags: ["تصميم", "UI/UX", "تجربة المستخدم"]
+author: 'tars'
 ---
 
 ## العين تأكل قبل الفم (في الويب أيضاً!)

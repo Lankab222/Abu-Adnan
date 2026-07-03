@@ -4,6 +4,7 @@ description: 'لماذا يعتبر التوليد الثابت للمواقع (
 pubDate: '2025-01-15'
 heroImage: '~/assets/blog/server.webp'
 tags: ["SSG", "أمان", "SEO"]
+author: 'tars'
 ---
 
 ## العودة إلى الجذور: قوة المواقع الثابتة (SSG)

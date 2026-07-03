@@ -4,6 +4,7 @@ description: 'هذا هو منشورنا الأول باللغة العربية.
 pubDate: '2025-01-15'
 heroImage: '~/assets/blog/globe.webp'
 tags: ["ترحيب", "أسترو"]
+author: 'tars'
 ---
 
 ## مرحباً بكم في ڤلادتاك

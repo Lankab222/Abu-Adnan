@@ -4,6 +4,7 @@ description: 'نظرة شاملة على التحديثات الثورية في 
 pubDate: '2025-01-15'
 heroImage: '~/assets/blog/colors.webp'
 tags: ["Tailwind", "CSS", "تصميم"]
+author: 'tars'
 ---
 
 ## ثورة في عالم CSS: ما الجديد في Tailwind 4؟

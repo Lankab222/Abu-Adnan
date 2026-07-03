@@ -4,6 +4,7 @@ description: 'ديكورات الجبس بورد والأسقف المعلقة'
 pubDate: '2025-07-20'
 heroImage: '~/assets/blog/123.jpg'
 tags: ["جبس", "ديكورات", "اسقف مستعاره"]
+author: 'tars'
 ---
 
 

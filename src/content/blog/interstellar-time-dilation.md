@@ -4,6 +4,7 @@ description: 'الحقيقة المرعبة لكوكب ميلر.'
 pubDate: '2025-02-14'
 heroImage: '~/assets/blog/interstellar-waves.webp'
 tags: ["interstellar", "time", "relativity"]
+author: 'tars'
 ---
 
 "تلك ليست جبالاً... إنها أمواج."

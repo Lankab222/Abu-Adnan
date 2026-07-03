@@ -4,6 +4,7 @@ description: 'أرضيات الإيبوكسي (Epoxy) الحديثة'
 pubDate: '2025-06-20'
 heroImage: '~/assets/blog/111.webp'
 tags: ["ايبوكسي", "ارضيات", "عوازل"]
+author: 'tars'
 ---
 
 
