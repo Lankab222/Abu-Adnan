@@ -7,40 +7,61 @@ import Grid from '~/components/ui/Grid.astro';
 import { getCollection } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
 
+// export async function getStaticPaths() {
+//   const allAuthors = await getCollection('authors');
+//   const allPosts = await getCollection('blog');
+
+//   return allAuthors.map((author) => {
+//     // جلب مقالات هذا الكاتب لتمريرها للصفحة
+//     const authorPosts = allPosts.filter((post) => {
+//       // إصلاح السطر ليتأكد من جلب الـ ID بشكل صحيح
+//       const postAuthor = post.data.author || post.data.author;
+//       return postAuthor === author.id;
+//     });
+
+//     return {
+//       // هنا نصنع المسار: نمرر 'author' لكي يتطابق مع اسم الملف
+//       params: { author: author.id }, 
+//       props: { 
+//         author: author, // نمرر بيانات الكاتب بالكامل للصفحة
+//         posts: authorPosts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+//       },
+//     };
+//   });
+// }
 export async function getStaticPaths() {
-  const allAuthors = await getCollection('authors');
   const allPosts = await getCollection('blog');
+  const allAuthors = await getCollection('authors');
+  
+  // Get unique author slugs (e.g., 'joseph-cooper', 'tars')
+  const uniqueAuthorSlugs = [...new Set(allAuthors.map(a => a.id.split('/').slice(1).join('/')))];
 
-  return allAuthors.map((author) => {
-    // جلب مقالات هذا الكاتب لتمريرها للصفحة
-    const authorPosts = allPosts.filter((post) => {
-      // إصلاح السطر ليتأكد من جلب الـ ID بشكل صحيح
-      const postAuthor = post.data.author || post.data.author;
-      return postAuthor === author.id;
+  return Object.keys("").flatMap((lang) => {
+    return uniqueAuthorSlugs.map((authorSlug) => {
+      // Filter posts by this author and language
+      const filteredPosts = allPosts
+        .filter((post) => post.id.startsWith(`/`) && post.data.author === authorSlug)
+        .sort((a: CollectionEntry<'blog'>, b: CollectionEntry<'blog'>) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+      return {
+        params: { lang, author: authorSlug },
+        props: { posts: filteredPosts, authorSlug },
+      };
     });
-
-    return {
-      // هنا نصنع المسار: نمرر 'author' لكي يتطابق مع اسم الملف
-      params: { author: author.id }, 
-      props: { 
-        author: author, // نمرر بيانات الكاتب بالكامل للصفحة
-        posts: authorPosts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
-      },
-    };
   });
 }
-
 // استلام البيانات النظيفة والمباشرة من getStaticPaths
 interface Props {
-  author: CollectionEntry<'authors'>;
+  author?: CollectionEntry<'authors'>;
+  authorSlug?: string;
   posts: CollectionEntry<'blog'>[];
 }
 
-const { author, posts } = Astro.props;
+const { author, authorSlug, posts } = Astro.props as Props;
 
 // استخراج اسم ووصف الكاتب بسهولة وبدون تعقيدات
-const authorName = author.data.name;
-const authorDesc = author.data.description;
+const authorName = author?.data?.name ?? authorSlug ?? 'الكاتب';
+const authorDesc = author?.data?.description ?? 'مقالات الكاتب';
 ---
 
 <Layout title={`${authorName} - المدونة`} description={`مقالات بواسطة ${authorName}`}>
