@@ -3,7 +3,6 @@ import { Image } from 'astro:assets';
 import t from '~/data/ar.json';
 import Card from '~/components/ui/Card.astro';
 
-import { getEntry } from 'astro:content';
 
 interface Props {
   title: string;
@@ -16,7 +15,7 @@ interface Props {
   author?: string;
 }
 
-const { title, description, pubDate, slug, heroImage, isVideo = false, audioUrl } = Astro.props;
+const { title, description, pubDate, slug, heroImage, isVideo = false, audioUrl, author } = Astro.props;
 
 
 
@@ -68,10 +67,10 @@ const dateString = pubDate.toLocaleDateString("ar", {
   <div class="p-6">
     <div class="flex items-center gap-2 text-xs text-muted-foreground mb-3">
       <time datetime={pubDate.toISOString()}>{dateString}</time>
-      {t["NameSite"] && (
+      {author && (
         <>
           <span>•</span>
-          <span class="font-medium text-primary/80">{t["NameSite"]}</span>
+          <span class="font-medium text-primary/80">{author}</span>
         </>
       )}
       <span>•</span>
