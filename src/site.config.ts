@@ -26,7 +26,7 @@ export const siteConfig = {
       sales: 'sales@example.com',
     },
     phone: {
-      main: '+971544748420',
+      main: '+967730266665',
       label: 'اتصل بنا',
     },
     address: {
@@ -84,7 +84,7 @@ export const NAV_LINKS = [
 
 // روابط الأزرار والسوشيال ميديا (يمكنك وضع روابط العميل الحقيقية هنا)
 export const ACTION_LINKS = {
-  primary: { label: 'اتصل بنا', href: 'tel:+971544748420' },
+  primary: { label: 'اتصل بنا', href: 'tel:+967730266665' },
   social: { 
     twitter: '#', // ضع رابط تويتر هنا
     linkedin: '#', // ضع رابط لينكد إن هنا

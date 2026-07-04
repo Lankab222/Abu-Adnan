@@ -7,7 +7,7 @@ tags: ["فوم", "استيل", "ديكورات"]
 author: 'tars'
 ---
 ##  لطلب تنفيذ اعمال ديكورات الفوم، الاستيل، والمرايا المشطوفة   
-<<div class="flex flex-wrap gap-4 my-8">
+<div class="flex flex-wrap gap-4 my-8">
   <a href="https://wa.me/971500000000" target="_blank" rel="noopener noreferrer" class="bg-green-500 text-white px-6 py-3 rounded-lg font-bold hover:bg-green-600 transition-colors no-underline">
     💬 مراسلة عبر واتساب
   </a>
@@ -15,7 +15,7 @@ author: 'tars'
   <a href="tel:+971500000000" class="bg-blue-600 text-white px-6 py-3 rounded-lg font-bold hover:bg-blue-700 transition-colors no-underline">
     📞 اتصال هاتفي
   </a>
-</div>>
+</div>
 
 ## المزيد من التفاصيل
 لمسات من الفخامة الكلاسيكية والنيو-كلاسيك عبر تركيب بانوهات وإطارات الفوم (بديل الجبس) المطعمة بشرائح الاستيل الذهبي والفضي. ندمج هذه الديكورات مع المرايا الجدارية المشطوفة ذات القصات الهندسية لتعطي اتساعاً بصرياً وإشراقاً للممرات، غرف الطعام، ومداخل الفلل.
