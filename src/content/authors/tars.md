@@ -1,9 +1,9 @@
 ---
-name: 'طيف الاعمار'
-description: 'Advanced tactical and scientific robot. Programming includes 90% honesty and a customizable humor level.'
+name: 'دهانات وديكورات الرياض'
+description: 'دهانات وديكورات الرياض لجميع انواع الدهانات الداخلية والخارجية والديكورات بجميع انواعها جبس بورد فوم استيل بديل الخشب وجميع اعمال الترميمات وعوازل الاسطح والارضيايات الايبوكسي'
 avatar: '~/assets/authors/tars.webp'
 social:
   github: 'https://github.com/tars-robot'
 ---
 
-TARS is one of the four former U.S. Marine Corps tactical robots, along with CASE, KIPP, and PLEX, repurposed for the Lazarus missions. His versatile design allows for complex maneuvers and high-speed locomotion, while his advanced AI provides critical support in navigation, data analysis, and situational humor.
+دهانات وديكورات الرياض لجميع انواع الدهانات الداخلية والخارجية والديكورات بجميع انواعها جبس بورد فوم استيل بديل الخشب وجميع اعمال الترميمات وعوازل الاسطح والارضيايات الايبوكسي
