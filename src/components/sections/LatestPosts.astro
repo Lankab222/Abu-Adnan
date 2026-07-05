@@ -30,7 +30,10 @@ const posts = (await getCollection('blog'))
     <div class="max-w-7xl mx-auto px-5">
          
          <div class="flex justify-between items-end mb-12">
-            
+            <div class="mb-0 text-center max-w-2xl mx-auto">
+             <h2 class="text-4xl font-display text-yellow-600 font-bold mb-4" set:html={t["bento.title"]} />
+             <p class="text-2xl text-muted-foreground">{t["bento.description"]}</p>
+        </div>
             <a href={`/blog`} class="text-primary hover:text-primary/80 font-medium hidden md:block">
                 {viewAllText} {arrow}
             </a>
