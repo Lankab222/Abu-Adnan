@@ -12,7 +12,7 @@ const primaryHref = ACTION_LINKS.primary.href;
 ---
 
 <header id="main-header" class="w-full transition-all duration-500 border-b border-transparent bg-transparent py-4 text-foreground">
-  <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+  <div class="max-w-7xl mx-auto px-3 h-16 flex items-center justify-between">
     <a href="/" class="flex items-center gap-3 text-xl font-bold tracking-tight text-primary dark:text-white group">
       {siteConfig.logo && (
         siteConfig.logo.strategy === 'switch' ? (
@@ -20,15 +20,15 @@ const primaryHref = ACTION_LINKS.primary.href;
             <img 
               src={siteConfig.logo.src} 
               alt={siteConfig.logo.alt} 
-              width="32"
-              height="32"
+              width="30"
+              height="30"
               class="h-8 w-auto group-hover:rotate-6 transition-transform duration-300 dark:hidden block"
             />
             <img 
               src={siteConfig.logo.srcDark || siteConfig.logo.src} 
               alt={siteConfig.logo.alt} 
-              width="32"
-              height="32"
+              width="30"
+              height="30"
               class="h-8 w-auto group-hover:rotate-6 transition-transform duration-300 hidden dark:block"
             />
           </>
@@ -36,15 +36,15 @@ const primaryHref = ACTION_LINKS.primary.href;
           <img 
             src={siteConfig.logo.src} 
             alt={siteConfig.logo.alt} 
-            width="32"
-            height="32"
+            width="30"
+            height="30"
             class={`h-8 w-auto group-hover:rotate-6 transition-transform duration-300 ${
               siteConfig.logo.strategy === 'invert' ? 'dark:invert' : ''
             }`}
           />
         )
       )}
-      <span class="md:hidden lg:inline">{siteConfig.name}</span>
+      <span class="md:hidden lg:inline text-sm font-bold">{siteConfig.name}</span>
     </a>
     <div class="flex-1 flex justify-center mx-4 lg:mx-8">
       <DesktopNav client:only="react" links={NAV_LINKS} currentPath={Astro.url.pathname} />
