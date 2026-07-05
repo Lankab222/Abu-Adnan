@@ -28,18 +28,9 @@ import {
     Moon,
     Eye,
 } from "lucide-react";
-import FeaturesList from "~/components/sections/FeaturesList.astro";
-import FeatureItem from "~/components/ui/FeatureItem.astro";
-
-import Testimonials from "~/components/sections/Testimonials.astro";
-import Testimonial from "~/components/ui/Testimonial.astro";
-import Stats from "~/components/sections/Stats.astro";
-import StatItem from "~/components/ui/StatItem.astro";
+import Boximage from "~/components/sections/Boximage.astro";
 import CTA from "~/components/sections/CTA.astro";
-import FAQ from "~/components/sections/FAQ.astro";
-import LogoCloud from "~/components/sections/LogoCloud.astro";
 import TechStack from "~/components/sections/TechStack.astro";
-import NewsletterSection from "~/components/sections/NewsletterSection.astro";
 
 
 
@@ -366,20 +357,6 @@ const homeFaqs = [
 
     <LatestPosts count={6} />
 
-    <!-- <Section class="py-24">
-        <div class="text-center max-w-3xl mx-auto mb-16">
-            <h2 class="text-3xl font-bold mb-4">{t['benefits.title']}</h2>
-            <p class="text-muted-foreground">{t['benefits.subtitle']}</p>
-        </div>
-        <FeaturesList>
-            {benefits.map((benefit) => (
-                <FeatureItem title={benefit.title} description={benefit.description}>
-                    <benefit.icon slot="icon" className="w-6 h-6" />
-                </FeatureItem>
-            ))}
-        </FeaturesList>
-    </Section> -->
-
     <Section id="tech-stack" class="py-10 bg-foreground/2">
         <div class="text-center max-w-3xl mx-auto mb-16">
             <h2 class="text-3xl font-bold mb-4 italic">
@@ -392,34 +369,22 @@ const homeFaqs = [
         </div>
     </Section>
 
-    <!-- <Section class="py-0 overflow-visible">
-    <Stats>
-        {stats.map((stat) => (
-            <StatItem value={stat.value} label={stat.label} />
-        ))}
-    </Stats>
-    </Section> -->
+   <section class="py-10 bg-[oklch(0.89_0.03_274.8)] relative overflow-hidden">
+    <div class="container mx-auto px-4 relative z-10">
+    <div class="p-4 md:p-10 border border-gray-200 bg-white/80 backdrop-blur-sm rounded-3xl shadow-xl">
+      <h1 class="text-3xl md:text-4xl font-bold text-center mb-4">معرض صور <span class="text-yellow-800">أعمالنا</span></h1>
+      <h2 class="text-lg md:text-2xl font-bold text-center mb-10 text-gray-600">شاهد بعض الصور من أعمالنا في الدهانات والديكورات</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6">
+        <Boximage src="/images/1.jpg" alt="تنفيذ دهانات وديكورات" />
+        <Boximage src="/images/2.webp" alt="عوازل أسطح" />
+        <Boximage src="/images/3.jpg" alt="ديكورات داخلية" />
+        <Boximage src="/images/4.jpg" alt="ترميمات عامة" />
 
-    <!-- <Section class="py-0 overflow-visible">
-    <Testimonials>
-      {testimonials.map((testimonial) => (
-        <Testimonial 
-          text={testimonial.text}
-          author={testimonial.author}
-          role={testimonial.role}
-        />
-      ))}
-    </Testimonials>
-    </Section> -->
-
-    <!-- <Section class="py-0 overflow-visible">
-    <FAQ items={homeFaqs} />
-    </Section> -->
-
-    <!-- <NewsletterSection 
-        title="Stay Informed" 
-        description="Join our newsletter to receive the latest updates, technical deep-dives, and exclusive content from the Cooper universe."
-    /> -->
+      </div>
+    </div>
+    </div>
+</section>
+   
 
     <CTA
         title={t["cta.readyToLaunch"]}

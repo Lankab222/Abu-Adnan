@@ -1,8 +1,9 @@
 ---
 import Layout from '~/layouts/Layout.astro';
+import t from '~/data/ar.json';
 ---
 
-<Layout title="سياسة الخصوصية - مؤسسة طيف الإعمار" description="سياسة الخصوصية لمؤسسة طيف الإعمار وتفاصيل جمع واستخدام البيانات.">
+<Layout title={'سياسة الخصوصية - '+t['title']} description={t['description']}>
     <div class="pt-32 pb-24" dir="rtl">
         <div class="max-w-4xl mx-auto px-6">
             <h1 class="text-4xl md:text-5xl font-bold mb-8">سياسة الخصوصية</h1>
@@ -40,9 +41,9 @@ import Layout from '~/layouts/Layout.astro';
                 <p>
                     إذا كانت لديكم أي أسئلة حول سياسة الخصوصية هذه، أو إذا أردتم الاستفسار عن ممارسات الخصوصية الخاصة بنا، يرجى عدم التردد في التواصل معنا عبر:
                     <br><br>
-                    <strong>البريد الإلكتروني:</strong> <a href="mailto:info@taifalemar.site" dir="ltr" class="inline-block">info@taifalemar.site</a>
+                    <strong>البريد الإلكتروني:</strong> <a href={t['EmailSender']} dir="ltr" class="inline-block">{t['EmailLabel']}</a>
                     <br>
-                    <strong>الهاتف / واتساب:</strong> <a href="tel:+971544748420" dir="ltr" class="inline-block">0544748420</a>
+                    <strong>الهاتف / واتساب:</strong> <a href={t['CallNumber']} dir="ltr" class="inline-block">{t['NumberLabel']}</a>
                 </p>
             </div>
         </div>

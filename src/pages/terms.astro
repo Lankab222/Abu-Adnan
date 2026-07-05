@@ -1,8 +1,16 @@
 ---
 import Layout from '~/layouts/Layout.astro';
+import t from '~/data/ar.json';
+
 ---
 
-<Layout title="شروط الخدمة - مؤسسة طيف الإعمار" description="شروط وأحكام التعاقد واستخدام موقع مؤسسة طيف الإعمار لأعمال الديكور والأصباغ.">
+<Layout title={t['brand.name'] + " - شروط الخدمة"} description={t['brand.description']}>
+    <div class="my-8">
+  <div class="text-xl font-bold mb-4">🏆 مثال واقعي: حل مشكلة "Missing parameter: author"</div>
+  <p class="text-muted-foreground mb-6">هذه مقارنة بصرية بين الكود المكسور (على اليسار) الذي كان يعطل الموقع، وبين الكود المُصحح (على اليسار) الذي أصلح المشكلة وجعل البناء ينجح.</p>
+
+ 
+</div>
     <div class="pt-32 pb-24" dir="rtl">
         <div class="max-w-4xl mx-auto px-6">
             <h1 class="text-4xl md:text-5xl font-bold mb-8">شروط الخدمة والتعاقد</h1>

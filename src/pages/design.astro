@@ -40,7 +40,7 @@ const projects = [
 ];
 ---
 
-<Layout title="مؤسسة طيف الاعمار -معرض الصور" description="معرض صور اعمالنا التي قمنا بتنفيذها لعملأنا">
+<Layout title={' | الصور'+t['title']} description={t['description']}>
     <Section class="pt-32 pb-24">
         <Container>
             <Heading level={1} class="mb-6">معرض صور اعمالنا</Heading>
@@ -78,7 +78,7 @@ const projects = [
                     </h1>
                         <div class="flex items-center gap-4 justify-center">
                             <a
-                                href="https://wa.me/971544748420"
+                                href={t['WhatsappNumber']}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 class="flex items-center justify-center w-12 h-12 bg-[#25D366] text-white rounded-full transition-all duration-300 shadow-md hover:scale-105 active:scale-95 shrink-0"
@@ -98,7 +98,7 @@ const projects = [
                             </a>
 
                             <a
-                                href="tel:+971544748420"
+                                href={t['CallNumber']}
                                 class="flex items-center justify-center w-12 h-12 bg-blue-600 text-white rounded-full transition-all duration-300 shadow-md hover:scale-105 active:scale-95 shrink-0"
                                 style="text-decoration: none;"
                                 aria-label="اتصل بنا"
