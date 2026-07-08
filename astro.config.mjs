@@ -32,7 +32,7 @@ const stripIdsPlugin = () => (tree, file) => {
 const DEFAULT_LOCALE = "ar";
 
 export default defineConfig({
-  site: 'https://abu-adnan.pages.dev/', // تأكد من تغيير هذا الرابط لاحقاً إلى الدومين الحقيقي للعميل
+  site: 'https://alryadhpaints.site/', // تأكد من تغيير هذا الرابط لاحقاً إلى الدومين الحقيقي للعميل
   output: 'static', // 🟢 تم الاعتماد على الوضع الاستاتيكي السريع
   image: {
     domains: ['vitejs.dev', 'upload.wikimedia.org', 'astro.build', 'pagepro.co'],
