@@ -64,7 +64,7 @@ const {
             item={{
                 "@context": "https://schema.org",
                 "@type": "HomeAndConstructionBusiness", // نوع النشاط التجاري الدقيق لجوجل
-                name: t["NameSite"],
+                name: siteConfig.name,
                 description: siteConfig.description, // سيجلب الوصف العربي الذي كتبناه في الإعدادات
                 url: Astro.site,
                 telephone: siteConfig.contact.phone.main, // سيجلب رقم الهاتف من الإعدادات
