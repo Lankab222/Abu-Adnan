@@ -1,5 +1,5 @@
 ---
-title: 'المظلات والسواتر'
+title: 'دهانات وديكورات الرياض | المظلات والسواتر'
 description: 'تركيب وتنفيذ اعمال المظلات والسواتر'
 pubDate: '2025-01-15'
 heroImage: '~/assets/blog/swateer/111.webp'
