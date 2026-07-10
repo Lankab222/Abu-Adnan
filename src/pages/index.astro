@@ -1,6 +1,5 @@
 ---
-
-import t from '~/data/ar.json';
+import t from "~/data/ar.json";
 import { Image } from "astro:assets";
 import bentoCode from "~/assets/bento-code.jpg";
 import logoVite from "~/assets/logos/Vite.js.webp";
@@ -31,10 +30,6 @@ import {
 import Boximage from "~/components/sections/Boximage.astro";
 import CTA from "~/components/sections/CTA.astro";
 import TechStack from "~/components/sections/TechStack.astro";
-
-
-
-
 
 const logos = [
     { name: "Vite", src: logoVite, description: t["logo.vite.desc"] },
@@ -134,11 +129,52 @@ const homeFaqs = [
 ];
 ---
 
-<Layout
-    title={t["title"]}
-    description={t["description"]}
->
+<Layout title={t["title"]} description={t["description"]}>
     <Schema
+        item={{
+            "@context": "https://schema.org",
+            "@graph": [
+                {
+                    // 1. تعريف الموقع بشكل عام
+                    "@type": "WebSite",
+                    "@id": `${Astro.site}#website`,
+                    name: t["NameSite"],
+                    url: Astro.site,
+                    description: t["description"],
+                },
+                {
+                    // 2. تعريف الشركة (دهانات وديكورات) بشكل دقيق
+                    "@type": "HomeAndConstructionBusiness",
+                    "@id": `${Astro.site}#localbusiness`,
+                    name: t["NameSite"],
+                    description: t["description"],
+                    image: t["UrlImage"],
+                    telephone: t["CallNumber"],
+                    url: Astro.site,
+                    priceRange: "$$",
+                    openingHours: "Mo-Su 08:00-22:00",
+                    address: {
+                        "@type": "PostalAddress",
+                        streetAddress: t["streetAddress"],
+                        addressLocality: t["addressLocality"],
+                        addressRegion: t["addressRegion"],
+                        addressCountry: t["addressCountry"],
+                    },
+                    geo: {
+                        "@type": "GeoCoordinates",
+                        latitude: 24.7136, // ملاحظة: يرجى التأكد من إحداثيات مدينة الرياض الصحيحة
+                        longitude: 46.6753,
+                    },
+                    aggregateRating: {
+                        "@type": "AggregateRating",
+                        ratingValue: "4.9",
+                        ratingCount: "120",
+                    },
+                },
+            ],
+        }}
+    />
+    <!-- <Schema
     item={{
         "@context": "https://schema.org",
         "@type": "WebSite",
@@ -199,7 +235,7 @@ const homeFaqs = [
             ratingCount: "120",
         },
     }}
-/>
+/> -->
 
     <Hero
         title={t["hero.title"]}
@@ -212,11 +248,7 @@ const homeFaqs = [
     <!-- <LogoCloud title={t['logo.title']} logos={logos} /> -->
 
     <Section class="py-10 overflow-visible">
-        <BentoGrid
-            title=""
-            description=""
-        >
-
+        <BentoGrid title="" description="">
             <BentoItem class="md:row-span-2 group">
                 <div
                     class="absolute bottom-0 left-0 w-full h-1/2 bg-linear-to-t from-black/50 to-transparent z-10"
@@ -284,7 +316,6 @@ const homeFaqs = [
                     </div>
                 </div>
             </BentoItem>
-
         </BentoGrid>
     </Section>
 
@@ -302,29 +333,36 @@ const homeFaqs = [
         </div>
     </Section>
 
-   <section class="py-10 bg-[oklch(0.89_0.03_274.8)] relative overflow-hidden">
-    <div class="container mx-auto px-4 relative z-10">
-    <div class="p-4 md:p-10 border border-gray-200 bg-white/80 backdrop-blur-sm rounded-3xl shadow-xl">
-      <h1 class="text-3xl md:text-4xl font-bold text-center mb-4">معرض صور <span class="text-yellow-800">أعمالنا</span></h1>
-      <h2 class="text-lg md:text-2xl font-bold text-center mb-10 text-gray-600">شاهد بعض الصور من أعمالنا في الدهانات والديكورات</h2>
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6">
-        <Boximage src="/images/1.jpg" alt="تنفيذ دهانات وديكورات" />
-        <Boximage src="/images/2.webp" alt="عوازل أسطح" />
-        <Boximage src="/images/3.jpg" alt="ديكورات داخلية" />
-        <Boximage src="/images/4.jpg" alt="ترميمات عامة" />
-        <Boximage src="/images/1.jpg" alt="تنفيذ دهانات وديكورات" />
-        <Boximage src="/images/2.webp" alt="عوازل أسطح" />
-        <Boximage src="/images/3.jpg" alt="ديكورات داخلية" />
-        <Boximage src="/images/4.jpg" alt="ترميمات عامة" />
-        <Boximage src="/images/1.jpg" alt="تنفيذ دهانات وديكورات" />
-        <Boximage src="/images/2.webp" alt="عوازل أسطح" />
-        <Boximage src="/images/3.jpg" alt="ديكورات داخلية" />
-        <Boximage src="/images/4.jpg" alt="ترميمات عامة" />
-      </div>
-    </div>
-    </div>
-</section>
-   
+    <section class="py-10 bg-[oklch(0.89_0.03_274.8)] relative overflow-hidden">
+        <div class="container mx-auto px-4 relative z-10">
+            <div
+                class="p-4 md:p-10 border border-gray-200 bg-white/80 backdrop-blur-sm rounded-3xl shadow-xl"
+            >
+                <h1 class="text-3xl md:text-4xl font-bold text-center mb-4">
+                    معرض صور <span class="text-yellow-800">أعمالنا</span>
+                </h1>
+                <h2
+                    class="text-lg md:text-2xl font-bold text-center mb-10 text-gray-600"
+                >
+                    شاهد بعض الصور من أعمالنا في الدهانات والديكورات
+                </h2>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6">
+                    <Boximage src="/images/1.jpg" alt="تنفيذ دهانات وديكورات" />
+                    <Boximage src="/images/2.webp" alt="عوازل أسطح" />
+                    <Boximage src="/images/3.jpg" alt="ديكورات داخلية" />
+                    <Boximage src="/images/4.jpg" alt="ترميمات عامة" />
+                    <Boximage src="/images/1.jpg" alt="تنفيذ دهانات وديكورات" />
+                    <Boximage src="/images/2.webp" alt="عوازل أسطح" />
+                    <Boximage src="/images/3.jpg" alt="ديكورات داخلية" />
+                    <Boximage src="/images/4.jpg" alt="ترميمات عامة" />
+                    <Boximage src="/images/1.jpg" alt="تنفيذ دهانات وديكورات" />
+                    <Boximage src="/images/2.webp" alt="عوازل أسطح" />
+                    <Boximage src="/images/3.jpg" alt="ديكورات داخلية" />
+                    <Boximage src="/images/4.jpg" alt="ترميمات عامة" />
+                </div>
+            </div>
+        </div>
+    </section>
 
     <CTA
         title={t["cta.readyToLaunch"]}
@@ -332,7 +370,7 @@ const homeFaqs = [
         primaryBtn={{ text: t["CallLabel"], href: t["CallNumber"] }}
         secondaryBtn={{
             text: t["WhatsappLabel"],
-            href:t["WhatsappNumber"],
+            href: t["WhatsappNumber"],
         }}
         disclaimer={t["cta.disclaimer"]}
     />

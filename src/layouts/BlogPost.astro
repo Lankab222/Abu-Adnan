@@ -33,9 +33,12 @@ const { title, description, pubDate, updatedDate, heroImage, heroImageAlt, youtu
 const schema = {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
+  "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": Astro.url.href, // يخبر جوجل أن هذا هو الرابط الأساسي للمقال
+  },
   "headline": title,
   "description": description,
-  // 🟢 هنا يكمن الحل: نتحقق من وجود التاريخ أولاً، وإلا نستخدم تاريخ اليوم
   "datePublished": pubDate ? pubDate.toISOString() : new Date().toISOString(),
   ...(updatedDate && { "dateModified": updatedDate.toISOString() }),
   ...(heroImage && { "image": new URL(heroImage.src, Astro.site).toString() }),
@@ -43,6 +46,15 @@ const schema = {
       "@type": "Person",
       "name": author,
       "url": Astro.site?.toString() || ""
+  },
+  // الإضافة الجديدة والمهمة لرفع موثوقية المقال
+  "publisher": {
+      "@type": "Organization",
+      "name": "دهانات وديكورات الرياض", // اسم الموقع/الشركة
+      "logo": {
+          "@type": "ImageObject",
+          "url": new URL("/logo.svg", Astro.site).toString() // تأكد من مسار الشعار الخاص بك
+      }
   }
 };
 ---
