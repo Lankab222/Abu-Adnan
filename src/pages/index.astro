@@ -154,12 +154,13 @@ const homeFaqs = [
                     priceRange: "$$",
                     openingHours: "Mo-Su 08:00-22:00",
                     address: {
-                        "@type": "PostalAddress",
-                        streetAddress: t["streetAddress"],
-                        addressLocality: t["addressLocality"],
-                        addressRegion: t["addressRegion"],
-                        addressCountry: t["addressCountry"],
-                    },
+    "@type": "PostalAddress",
+    streetAddress: t["streetAddress"],
+    addressLocality: t["addressLocality"],
+    addressRegion: t["addressRegion"],
+    postalCode: "12211", // 🟢 تمت إضافة الرمز البريدي هنا
+    addressCountry: t["addressCountry"]
+},
                     geo: {
                         "@type": "GeoCoordinates",
                         latitude: 24.7136, // ملاحظة: يرجى التأكد من إحداثيات مدينة الرياض الصحيحة
