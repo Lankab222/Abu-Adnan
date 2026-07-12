@@ -130,113 +130,89 @@ const homeFaqs = [
 ---
 
 <Layout title={t["title"]} description={t["description"]}>
-    <Schema
-        item={{
-            "@context": "https://schema.org",
-            "@graph": [
-                {
-                    // 1. تعريف الموقع بشكل عام
-                    "@type": "WebSite",
-                    "@id": `${Astro.site}#website`,
-                    name: t["NameSite"],
-                    url: Astro.site,
-                    description: t["description"],
-                },
-                {
-                    // 2. تعريف الشركة (دهانات وديكورات) بشكل دقيق
-                    "@type": "HomeAndConstructionBusiness",
-                    "@id": `${Astro.site}#localbusiness`,
-                    name: t["NameSite"],
-                    description: t["description"],
-                    image: t["UrlImage"],
-                    telephone: t["CallNumber"],
-                    url: Astro.site,
-                    priceRange: "$$",
-                    openingHours: "Mo-Su 08:00-22:00",
-                    address: {
-    "@type": "PostalAddress",
-    streetAddress: t["streetAddress"],
-    addressLocality: t["addressLocality"],
-    addressRegion: t["addressRegion"],
-    postalCode: "12211", // 🟢 تمت إضافة الرمز البريدي هنا
-    addressCountry: t["addressCountry"]
-},
-                    geo: {
-                        "@type": "GeoCoordinates",
-                        latitude: 24.7136, // ملاحظة: يرجى التأكد من إحداثيات مدينة الرياض الصحيحة
-                        longitude: 46.6753,
-                    },
-                    aggregateRating: {
-                        "@type": "AggregateRating",
-                        ratingValue: "4.9",
-                        ratingCount: "120",
-                    },
-                },
-            ],
-        }}
-    />
-    <!-- <Schema
-    item={{
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        name: t["NameSite"],
-        url: Astro.site,
-        potentialAction: {
-            "@type": "SearchAction",
-            target: {
-                "@type": "EntryPoint",
-                urlTemplate: `${Astro.site}search?q={search_term_string}`,
-            },
-            "query-input": "required name=search_term_string",
-        },
-    }}
-/>
-    <script type="application/ld+json">
+    <Fragment slot="head">
+     <script type="application/ld+json" class="aioseo-schema">
 {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "{{ t['NameSite'] }}",
-    "image": "{{ t['UrlImage'] }}",
-    "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "{{ t['streetAddress'] }}",
-        "addressLocality": "{{ t['addressLocality'] }}",
-        "addressRegion": "{{ t['addressRegion'] }}",
-        "addressCountry": "{{ t['addressCountry'] }}"
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.alryadhpaints.site/#breadcrumblist",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "@id": "https://www.alryadhpaints.site/#listItem",
+          "position": 1,
+          "item": {
+            "@type": "WebPage",
+            "@id": "https://www.alryadhpaints.site/",
+            "name": "الرئيسية",
+            "description": "الرئيسية - دهانات وديكورات الرياض دهانات ، ديكورات ، عوازل نتشرف بزيارتكم لموقعنا – معلم ديكورات الرياض – حيث نقوم بخدمات ترميم وتشطيب المنازل ، بناء وترميمات وصيانة الفلل في الرياض ، ويسعدنا في هذا الموقع عرض خدماتنا في مجال دهانات داخلية وخارجية ، تركيب ديكورات فوم ، بديل خشب ، بديل رخام ، خلفيات شاشة جبس بورد",
+            "url": "https://www.alryadhpaints.site/"
+          }
+        }
+      ]
     },
-    "telephone": "{{ t['CallNumber'] }}",
-    "url": "{{ t['UrlSite'] }}",
-    "priceRange": "$$",
-    "openingHours": "Mo-Su 08:00-22:00",
-    "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 24.3,
-        "longitude": 54.6
+    {
+      "@type": "Organization",
+      "@id": "https://www.alryadhpaints.site/#organization",
+      "name": "دهانات وديكورات الرياض",
+      "url": "https://www.alryadhpaints.site/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://alryadhpaints.site/logo.svg",
+        "@id": "https://www.alryadhpaints.site/#organizationLogo",
+        "width": 420,
+        "height": 139
+      },
+      "image": {
+        "@id": "https://www.alryadhpaints.site/#organizationLogo"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+96773026665", 
+        "contactType": "Customer Support"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.alryadhpaints.site/#webpage",
+      "url": "https://www.alryadhpaints.site/",
+      "name": "الرئيسية - دهانات وديكورات الرياض",
+      "description": "الرئيسية - دهانات وديكورات الرياض دهانات ، ديكورات ، عوازل نتشرف بزيارتكم لموقعنا – معلم ديكورات الرياض – حيث نقوم بخدمات ترميم وتشطيب المنازل ، بناء وترميمات وصيانة الفلل في الرياض ، ويسعدنا في هذا الموقع عرض خدماتنا في مجال دهانات داخلية وخارجية ، تركيب ديكورات فوم ، بديل خشب ، بديل رخام ، خلفيات شاشة جبس بورد",
+      "inLanguage": "ar",
+      "isPartOf": {
+        "@id": "https://www.alryadhpaints.site/#website"
+      },
+      "breadcrumb": {
+        "@id": "https://www.alryadhpaints.site/#breadcrumblist"
+      },
+      "datePublished": "2017-07-11T08:54:31+00:00",
+      "dateModified": "2024-12-30T18:04:19+00:00"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.alryadhpaints.site/#website",
+      "url": "https://www.alryadhpaints.site/",
+      "name": "دهانات وديكورات الرياض",
+      "description": "دهانات داخلية ، دهانات خارجية ، ديكورات فوم ، جبس بورد ، بديل الرخام ، بديل الخشب ، تركيب مرايات ، ورق جدران ، معلم دهانات في الرياض",
+      "inLanguage": "ar",
+      "publisher": {
+        "@id": "https://www.alryadhpaints.site/#organization"
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://www.alryadhpaints.site/?s={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
     }
+  ]
 }
 </script>
-    <Schema
-    item={{
-        "@context": "https://schema.org",
-        "@type": "HomeAndConstructionBusiness", // التصنيف الصحيح لشركتك في جوجل
-        name: t["NameSite"],
-        description: t["description"],
-        image: t["UrlImage"],
-        telephone: t["CallNumber"],
-        address: {
-            "@type": "PostalAddress",
-            addressLocality: t["addressLocality"],
-            addressRegion: t["addressRegion"],
-            addressCountry: t["addressCountry"]
-        },
-        priceRange: "$$", // يخبر جوجل أن أسعارك تنافسية/متوسطة
-        aggregateRating: {
-            "@type": "AggregateRating",
-            ratingValue: "4.9",
-            ratingCount: "120",
-        },
-    }}
-/> -->
+  </Fragment>
 
     <Hero
         title={t["hero.title"]}
