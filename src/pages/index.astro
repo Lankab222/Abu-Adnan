@@ -130,8 +130,8 @@ const homeFaqs = [
 ---
 
 <Layout title={t["title"]} description={t["description"]}>
-    <Fragment slot="head">
-     <script type="application/ld+json" class="aioseo-schema">
+   <Fragment slot="head">
+  <script type="application/ld+json" class="aioseo-schema">
 {
   "@context": "https://schema.org",
   "@graph": [
@@ -147,45 +147,80 @@ const homeFaqs = [
             "@type": "WebPage",
             "@id": "https://www.alryadhpaints.site/",
             "name": "الرئيسية",
-            "description": "الرئيسية - دهانات وديكورات الرياض دهانات ، ديكورات ، عوازل نتشرف بزيارتكم لموقعنا – معلم ديكورات الرياض – حيث نقوم بخدمات ترميم وتشطيب المنازل ، بناء وترميمات وصيانة الفلل في الرياض ، ويسعدنا في هذا الموقع عرض خدماتنا في مجال دهانات داخلية وخارجية ، تركيب ديكورات فوم ، بديل خشب ، بديل رخام ، خلفيات شاشة جبس بورد",
+            "description": "الرئيسية - دهانات وديكورات الرياض دهانات، ديكورات، عوازل، ترميم وتشطيب المنازل والفلل في الرياض.",
             "url": "https://www.alryadhpaints.site/"
           }
         }
       ]
     },
     {
-      "@type": "Organization",
+      "@type": "HomeAndConstructionBusiness",
       "@id": "https://www.alryadhpaints.site/#organization",
       "name": "دهانات وديكورات الرياض",
       "url": "https://www.alryadhpaints.site/",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://alryadhpaints.site/logo.svg",
         "@id": "https://www.alryadhpaints.site/#organizationLogo",
+        "url": "https://www.alryadhpaints.site/logo.svg",
         "width": 420,
         "height": 139
       },
       "image": {
         "@id": "https://www.alryadhpaints.site/#organizationLogo"
       },
+      "description": "معلم دهانات وديكورات بالرياض متخصص في الدهانات الداخلية والخارجية، الجبس بورد، بديل الخشب، بديل الرخام، الفوم، ورق الجدران، والترميمات.",
+      "telephone": "+96773026665",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "الرياض",
+        "addressRegion": "منطقة الرياض",
+        "addressCountry": "SA"
+      },
+      "areaServed": {
+        "@type": "City",
+        "name": "الرياض"
+      },
       "contactPoint": {
         "@type": "ContactPoint",
-        "telephone": "+96773026665", 
-        "contactType": "Customer Support"
-      }
+        "telephone": "+96773026665",
+        "contactType": "customer service",
+        "availableLanguage": [
+          "ar"
+        ]
+      },
+      "serviceType": [
+        "دهانات داخلية",
+        "دهانات خارجية",
+        "ترميم المنازل",
+        "ترميم الفلل",
+        "جبس بورد",
+        "ديكورات فوم",
+        "بديل الرخام",
+        "بديل الخشب",
+        "ورق جدران",
+        "تركيب مرايات"
+      ]
     },
     {
       "@type": "WebPage",
       "@id": "https://www.alryadhpaints.site/#webpage",
       "url": "https://www.alryadhpaints.site/",
       "name": "الرئيسية - دهانات وديكورات الرياض",
-      "description": "الرئيسية - دهانات وديكورات الرياض دهانات ، ديكورات ، عوازل نتشرف بزيارتكم لموقعنا – معلم ديكورات الرياض – حيث نقوم بخدمات ترميم وتشطيب المنازل ، بناء وترميمات وصيانة الفلل في الرياض ، ويسعدنا في هذا الموقع عرض خدماتنا في مجال دهانات داخلية وخارجية ، تركيب ديكورات فوم ، بديل خشب ، بديل رخام ، خلفيات شاشة جبس بورد",
-      "inLanguage": "ar",
+      "description": "الرئيسية - دهانات وديكورات الرياض دهانات، ديكورات، عوازل، ترميم وتشطيب المنازل والفلل في الرياض.",
+      "inLanguage": "ar-SA",
       "isPartOf": {
         "@id": "https://www.alryadhpaints.site/#website"
       },
       "breadcrumb": {
         "@id": "https://www.alryadhpaints.site/#breadcrumblist"
+      },
+      "about": {
+        "@id": "https://www.alryadhpaints.site/#organization"
+      },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://www.alryadhpaints.site/og-image1.jpg"
       },
       "datePublished": "2017-07-11T08:54:31+00:00",
       "dateModified": "2024-12-30T18:04:19+00:00"
@@ -195,8 +230,9 @@ const homeFaqs = [
       "@id": "https://www.alryadhpaints.site/#website",
       "url": "https://www.alryadhpaints.site/",
       "name": "دهانات وديكورات الرياض",
-      "description": "دهانات داخلية ، دهانات خارجية ، ديكورات فوم ، جبس بورد ، بديل الرخام ، بديل الخشب ، تركيب مرايات ، ورق جدران ، معلم دهانات في الرياض",
-      "inLanguage": "ar",
+      "description": "دهانات داخلية، دهانات خارجية، ديكورات فوم، جبس بورد، بديل الرخام، بديل الخشب، تركيب مرايات، ورق جدران، معلم دهانات في الرياض.",
+      "image": "https://www.alryadhpaints.site/og-image1.jpg",
+      "inLanguage": "ar-SA",
       "publisher": {
         "@id": "https://www.alryadhpaints.site/#organization"
       },
@@ -211,8 +247,8 @@ const homeFaqs = [
     }
   ]
 }
-</script>
-  </Fragment>
+  </script>
+</Fragment>
 
     <Hero
         title={t["hero.title"]}
