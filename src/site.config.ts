@@ -22,11 +22,11 @@ export const siteConfig = {
   },
   contact: {
     email: {
-      support: 'support@example.com',
-      sales: 'sales@example.com',
+      support: 'support@alryadhpaints.site',
+      sales: 'sales@alryadhpaints.site',
     },
     phone: {
-      main: '+967730266665',
+      main: '+966534064192',
       label: 'اتصل بنا',
     },
     address: {
@@ -84,7 +84,7 @@ export const NAV_LINKS = [
 
 // روابط الأزرار والسوشيال ميديا (يمكنك وضع روابط العميل الحقيقية هنا)
 export const ACTION_LINKS = {
-  primary: { label: 'اتصل بنا', href: 'tel:+967730266665' },
+  primary: { label: 'اتصل بنا', href: 'tel:+966534064192' },
   social: { 
     twitter: '#', // ضع رابط تويتر هنا
     linkedin: '#', // ضع رابط لينكد إن هنا
