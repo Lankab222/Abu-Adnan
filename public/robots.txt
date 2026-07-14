@@ -1,2 +1,4 @@
 User-agent: *
 Disallow:
+
+Sitemap: https://alryadhpaints.site/sitemap-index.xml
